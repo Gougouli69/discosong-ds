@@ -1,4 +1,4 @@
-#DiscoSong DS
+#DiscoSong DS - Mostacci Grégory
 
 User administrator information:
 email: admin@mail.fr
