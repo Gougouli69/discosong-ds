@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <img src="{{ artiste.picture }}" width="400" alt="">
+
+        <h1 class="display-3">{{artiste.name}}</h1>
+        <p>Type: {{ artiste.style.name }}</p>
+        <hr class="my-4">
+
+        <div class="d-flex flex-wrap justify-content-around">
+            <div class="album">
+                <h5>Albums de l'artiste:</h5>
+                <ul>
+                    {% for album in artiste.albums %}
+                        <li>{{ album.name }} | Sortie en {{ album.releaseYear }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="other-artist">
+                <h5>Artistes du même style ({{ artiste.style.artists | length -1 }}):</h5>
+                <ul>
+                    {% for one_artiste in artiste.style.artists %}
+                        {% if artiste != one_artiste%}
+                            <li><a href="{{ path('artiste_one', {slug: one_artiste.name}) }}">{{ one_artiste.name }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

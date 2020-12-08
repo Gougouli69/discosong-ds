@@ -1,0 +1,7 @@
+<div style="width: 15rem;" class="text-center card text-white bg-primary mb-3">
+    <div class="card-header">{{ artist.name }}</div>
+    <div class="card-body">
+        <img class="rounded" src="{{ artist.picture }}" alt="">
+        <a href="{{ path('artiste_one', {slug: artist.slug}) }}" class="btn btn-success">Voir l'artiste en détail</a>
+    </div>
+</div>

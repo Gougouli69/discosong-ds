@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <h1>Panel d'administration</h1>
+    <div class="mt-5 d-flex flex-wrap justify-content-around">
+        {% for item in cards %}
+        <div class="card border-{{ item.color }} mb-3" style="max-width: 20rem;">
+            <div class="card-header">{{ item.name | capitalize }}</div>
+            <div class="card-body">
+                <h4 class="card-title">Voir, modifier, créer, supprimer les {{ item.name }}.</h4>
+                <a href="{{ path(item.value ~ '_index' ) }}">Gestion des {{ item.name }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

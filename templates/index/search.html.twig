@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+        <h1>{{ infos.artists|length  }} résultats de la recherche: "{{ search_word }}"</h1>
+    <div class="d-flex flex-wrap justify-content-between">
+
+    {% if infos.artists %}
+            {% for artist in infos.artists %}
+                {% include "layout/artist_card.html.twig" %}
+            {% endfor %}
+        {% endif %}
+{#        {% if infos.artists %}#}
+{#            <div>#}
+{#                <h6>Artistes trouvés ({{ infos.artists | length }})</h6>#}
+{#                <ul>#}
+{#                    {% for artist in infos.artists %}#}
+{#                        <li><a href="{{ path('artiste_one', {slug: artist.name}) }}">{{ artist.name }}</a></li>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            </div>#}
+{#        {% endif %}#}
+{#        #}
+{#        {% if infos.albums %}#}
+{#            <div>#}
+{#                <h6>Album trouvés ({{ infos.albums | length }})</h6>#}
+{#                <ul>#}
+{#                    {% for album in infos.albums %}#}
+{#                        <li>{{ album.name }}</a></li>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            </div>#}
+
+{#        {% endif %}#}
+    </div>
+
+
+{% endblock %}

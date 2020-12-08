@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Les {{ albums | length }} derniers albums</h1>
+    <div class="d-flex flex-wrap justify-content-between">
+        {% for album in albums %}
+            {% include 'layout/album_card.html.twig' %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

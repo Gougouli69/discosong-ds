@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}DiscoSong{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}">
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+    {% include "layout/nav.html.twig" %}
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
