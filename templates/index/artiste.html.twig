@@ -22,7 +22,7 @@
                 <ul>
                     {% for one_artiste in artiste.style.artists %}
                         {% if artiste != one_artiste%}
-                            <li><a href="{{ path('artiste_one', {slug: one_artiste.name}) }}">{{ one_artiste.name }}</a></li>
+                            <li><a href="{{ path('artiste_one', {slug: one_artiste.slug}) }}">{{ one_artiste.name }}</a></li>
                         {% endif %}
                     {% endfor %}
                 </ul>
